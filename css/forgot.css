@@ -1,0 +1,126 @@
+/* forgot.css
+   Estilos para la página de recuperación de contraseña (forgot password)
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body, html {
+    height: 100%;
+    background: linear-gradient(135deg, #15191d, #213136);
+  }
+  
+  .container-forgot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+  }
+  
+  .form-box {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    width: 350px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    animation: slideIn 0.8s ease;
+  }
+  
+  .title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  input[type="email"]:focus {
+    border-color: #3498db;
+  }
+  
+  .btn-forgot {
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .btn-forgot:hover {
+    background-color: #2980b9;
+  }
+  
+  .feedback {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  .back-link {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #3498db;
+    text-decoration: none;
+  }
+  
+  .back-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* PANEL derecho */
+  .forgot-panel {
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 50px;
+    margin-left: 30px;
+    width: 350px;
+    text-align: center;
+    color: white;
+    animation: fadeIn 1.2s ease;
+  }
+  
+  .forgot-panel h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .forgot-panel p {
+    font-size: 16px;
+  }
+  
+  /* Animaciones */
+  @keyframes slideIn {
+    0% { transform: translateY(100px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }

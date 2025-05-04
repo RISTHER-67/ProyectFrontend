@@ -1,0 +1,140 @@
+[
+  {
+      "name": "iPhone 16 Pro Max",
+      "brand": "iPhone",
+      "price": 1899,
+      "storage": "256 GB",
+      "image": "../imagenes/Iphone 16 Pro Max.png",
+      "images": [
+          "../imagenes/Iphone 16 pro max.jpg",
+          "../imagenes/Iphone 16 pro1.jpg"
+      ],
+      "description": "El iPhone 16 Pro Max ofrece un rendimiento excepcional con su chip A16 Bionic y una pantalla Super Retina XDR.",
+      "features": [
+          "Pantalla OLED de 6.7 pulgadas",
+          "Cámara triple de 48 MP",
+          "Resistencia al agua IP68",
+          "Batería de larga duración"
+      ]
+  },
+  {
+      "name": "Samsung Galaxy S24",
+      "brand": "Samsung",
+      "price": 1199,
+      "storage": "256 GB",
+      "image": "../imagenes/PIC1771002_RL_07.png",
+      "images": [
+          "../imagenes/Samsung s24 1.jpg",
+          "../imagenes/Samsung s24 2.jpg"
+      ],
+      "description": "Samsung Galaxy S24 Ultra con cámara avanzada y pantalla Dynamic AMOLED 2X.",
+      "features": [
+          "Pantalla Dynamic AMOLED 6.8 pulgadas",
+          "Cámara cuádruple de 108 MP",
+          "Carga rápida de 45W",
+          "S-Pen integrado"
+      ]
+  },
+  {
+      "name": "iPhone 14 Pro",
+      "brand": "iPhone",
+      "price": 1099,
+      "storage": "256 GB",
+      "image": "https://via.placeholder.com/150",
+      "images": [],
+      "description": "iPhone 14 Pro con tecnología avanzada y diseño elegante.",
+      "features": [
+          "Pantalla OLED de 6.1 pulgadas",
+          "Cámara dual de 12 MP",
+          "Face ID",
+          "iOS 16"
+      ]
+  },
+  {
+      "name": "Red Magic 8 Pro",
+      "brand": "Red Magic",
+      "price": 999,
+      "storage": "256 GB",
+      "image": "https://via.placeholder.com/150",
+      "images": [],
+      "description": "Red Magic 8 Pro, smartphone para gamers con alto rendimiento.",
+      "features": [
+          "Pantalla AMOLED de 6.8 pulgadas",
+          "Procesador Snapdragon 8 Gen 2",
+          "Sistema de refrigeración avanzado",
+          "Batería de 4500 mAh"
+      ]
+  },
+  {
+      "name": "Red Magic 10 Pro",
+      "brand": "Red Magic",
+      "price": 1299,
+      "storage": "1TB",
+      "image": "../imagenes/Red magic 10 Pro.png",
+      "images": [
+          "../imagenes/Red magic 10.jpeg",
+          "../imagenes/Red magic 11.jpeg"
+      ],
+      "description": "Red Magic 10 Pro con características de alta gama para juegos intensos.",
+      "features": [
+          "Pantalla AMOLED de 6.67 pulgadas",
+          "Procesador Snapdragon 8 Gen 1",
+          "Carga rápida de 165W",
+          "Batería de 4500 mAh"
+      ]
+  },
+  {
+      "name": "Google Pixel 8 Pro",
+      "brand": "Google",
+      "price": 899,
+      "storage": "128 GB",
+      "image": "https://via.placeholder.com/150",
+      "images": [
+          "https://via.placeholder.com/100",
+          "https://via.placeholder.com/100"
+      ],
+      "description": "Google Pixel 8 Pro con cámara avanzada y rendimiento optimizado.",
+      "features": [
+          "Pantalla OLED de 6.7 pulgadas",
+          "Cámara triple de 50 MP",
+          "Procesador Google Tensor G3",
+          "Batería de larga duración"
+      ]
+  },
+  {
+      "name": "OnePlus 12",
+      "brand": "OnePlus",
+      "price": 799,
+      "storage": "256 GB",
+      "image": "https://via.placeholder.com/150",
+      "images": [
+          "https://via.placeholder.com/100",
+          "https://via.placeholder.com/100"
+      ],
+      "description": "OnePlus 12 con carga rápida y pantalla AMOLED fluida.",
+      "features": [
+          "Pantalla AMOLED de 6.7 pulgadas",
+          "Cámara triple de 48 MP",
+          "Carga rápida de 100W",
+          "Batería de 4500 mAh"
+      ]
+  },
+  {
+      "name": "Sony Xperia 1 V",
+      "brand": "Sony",
+      "price": 1199,
+      "storage": "512 GB",
+      "image": "https://via.placeholder.com/150",
+      "images": [
+          "https://via.placeholder.com/100",
+          "https://via.placeholder.com/100"
+      ],
+      "description": "Sony Xperia 1 V con pantalla 4K y cámara profesional.",
+      "features": [
+          "Pantalla OLED 4K de 6.5 pulgadas",
+          "Cámara triple de 12 MP",
+          "Procesador Snapdragon 8 Gen 2",
+          "Batería de 5000 mAh"
+      ]
+  }
+]
