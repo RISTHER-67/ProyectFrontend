@@ -8,6 +8,9 @@ body {
 }
 .navbar-brand{
     color: #ffffff;
+    padding-left: 2%;
+    font-size: 25px;
+    font-weight: bold;
 }
 .form-control, .form-select {
     background-color: #ffffff;

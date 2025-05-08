@@ -3,38 +3,39 @@
 */
 
 body {
-    font-family: 'Segoe UI', sans-serif;
-  }
-  
-  .form-slider {
-    position: relative;
-    overflow: hidden;
-    height: 100%;
-    min-height: 400px;
-  }
-  
-  .form-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    opacity: 0;
-    transition: all 0.5s ease;
-    z-index: 0;
-    transform: translateX(100%);
-    color: #1a1a1a;
-    
-  }
-  
-  .form-content.show {
-    opacity: 1;
-    z-index: 1;
-    transform: translateX(0);
-  }
-  /* Navigation */
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.form-slider {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  min-height: 400px;
+}
+
+.form-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: 0;
+  transform: translateX(100%);
+  color: #1a1a1a;
+
+}
+
+.form-content.show {
+  opacity: 1;
+  z-index: 1;
+  transform: translateX(0);
+}
+
+/* Navigation */
 .navbar {
   background-color: #212529 !important;
-  
+
 }
 
 .navbar-brand {
@@ -43,148 +44,144 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
   padding-left: 2%;
-  
+
 }
 
 .nav-link {
   color: #ffffff !important;
   transition: all 0.3s ease;
-  
+
 }
+
 .collapse {
   padding-left: 3%;
 }
+
 .nav-link:hover {
   color: #ff0000 !important;
   text-shadow: 0 0 5px #ff0000;
 }
 
-.navbar-toggler {
-  border-color: #ff0000 !important;
+
+/* When login form is shown, register form is off to the right */
+#loginForm.show {
+  transform: translateX(0);
+  opacity: 1;
+  z-index: 1;
 }
 
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255,255,255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+#registerForm.show {
+  transform: translateX(0);
+  opacity: 1;
+  z-index: 1;
 }
-  /* When login form is shown, register form is off to the right */
-  #loginForm.show {
-    transform: translateX(0);
-    opacity: 1;
-    z-index: 1;
-  }
-  
-  #registerForm.show {
-    transform: translateX(0);
-    opacity: 1;
-    z-index: 1;
-  }
-  
-  /* When login form is hidden, slide it left */
-  #loginForm:not(.show) {
-    transform: translateX(-100%);
-    opacity: 0;
-    z-index: 0;
-  }
-  
-  /* When register form is hidden, slide it right */
-  #registerForm:not(.show) {
-    transform: translateX(100%);
-    opacity: 0;
-    z-index: 0;
-  }
-  
-  .logo-container {
-    min-width: 200px;
-    max-width: 300px;
-    height: 400px;
-    
-  }
-  
-  .logo-container span {
-    font-size: 1.5rem;
-  }
 
-  /* Increase font size of form titles */
-  .form-content h2 {
-    font-size: 200%;
-  }
-  
-  .form-control::placeholder {
-    color: #ffffff;
-    opacity: 1;
+/* When login form is hidden, slide it left */
+#loginForm:not(.show) {
+  transform: translateX(-100%);
+  opacity: 0;
+  z-index: 0;
+}
 
-  }
-  .dise{
-    text-decoration: none;
-  }
-a{
+/* When register form is hidden, slide it right */
+#registerForm:not(.show) {
+  transform: translateX(100%);
+  opacity: 0;
+  z-index: 0;
+}
+
+.logo-container {
+  min-width: 200px;
+  max-width: 300px;
+  height: 400px;
+
+}
+
+.logo-container span {
+  font-size: 1.5rem;
+}
+
+/* Increase font size of form titles */
+.form-content h2 {
+  font-size: 200%;
+}
+
+.form-control::placeholder {
+  color: #ffffff;
+  opacity: 1;
+
+}
+
+.dise {
+  text-decoration: none;
+}
+
+a {
   text-decoration: none;
   color: #00cc00;
 }
-a:hover{
+
+a:hover {
   color: #ffffff;
 }
-  .btn-outline-success {
-    border-color: #00cc00;
-    color: #00cc00;
-  }
-  
-  .btn-outline-success:hover {
-    background-color: #00cc00;
-    color: #fff;
-  }
-  
-  .btn {
-    height: 40px;
-    background-color: #44454b;
-  }
-  
-  .btn:hover {
-    background-color: #00cc00;
-    color: #1A1B22;
-  }
-  
-  .mb-3, .mb-4, .d-grid {
-    max-width: 350px;
-    width: 100%;
-  }
-  .mb-3{
-    color: #ffffff;
-  }
-  .text-center {
-    max-width: 350px;
-    width: 100%;
-    font-size: 0.9rem;
-  }
-  
-  @media (max-width: 480px) {
-    .mb-3, .mb-4 {
-      height: auto;
-    }
-    .btn {
-      height: 38px;
-      font-size: 14px;
-    }
-    .form-content h2 {
-      font-size: 2rem;
-    }
-  }
+
+.btn-outline-success {
+  border-color: #00cc00;
+  color: #00cc00;
+}
+
+.btn-outline-success:hover {
+  background-color: #00cc00;
+  color: #fff;
+}
+
+.btn {
+  height: 40px;
+  background-color: #44454b;
+}
+
+.btn:hover {
+  background-color: #00cc00;
+  color: #1A1B22;
+}
+
+.mb-3,
+.mb-4,
+.d-grid {
+  max-width: 350px;
+  width: 100%;
+}
+
+.mb-3 {
+  color: #ffffff;
+}
+
+.text-center {
+  max-width: 350px;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
 /*Carrusel */
 
 .imag-carrusel {
-  width: 40%; /* Reducimos el tamaño para que no tape el formulario */
+  width: 40%;
+  /* Reducimos el tamaño para que no tape el formulario */
   height: 450px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  margin: 0; /* Quitamos el margen grande que movía todo */
-  padding: 0; /* Sin padding extra */
-  
+  margin: 0;
+  /* Quitamos el margen grande que movía todo */
+  padding: 0;
+  /* Sin padding extra */
+
 }
 
 .imag-carrusel img {
-  width: 20%; /* Ajuste inicial para que no sean muy chicas */
+  width: 20%;
+  /* Ajuste inicial para que no sean muy chicas */
   height: 80%;
   object-fit: cover;
   border-radius: 10px;
@@ -193,7 +190,8 @@ a:hover{
 }
 
 .imag-carrusel img:hover {
-  width: 40%; /* Efecto de expansión */
+  width: 40%;
+  /* Efecto de expansión */
 }
 
 /* Clase extra para animación suave */
@@ -202,11 +200,12 @@ a:hover{
 }
 
 .hover-grow:hover {
-  transform: scale(1.05); /* Ligeramente más grande */
+  transform: scale(1.05);
+  /* Ligeramente más grande */
 }
 
 /* Footer */
-footer p{
+footer p {
   color: #aaaaaa;
   transition: all 0.3s ease;
   text-align: center;

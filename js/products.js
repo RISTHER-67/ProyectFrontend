@@ -24,7 +24,7 @@ function renderProducts(products) {
 
     products.forEach(product => {
         const productDiv = document.createElement('div');
-        productDiv.className = 'col-md-3';
+        productDiv.className = 'col';
         productDiv.innerHTML = `
             <div class="product">
                 <div class="card h-100">

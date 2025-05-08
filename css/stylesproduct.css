@@ -1,116 +1,51 @@
-/* styles.css
-   Estilos para la página principal: navbar, productos, botones, chat, modal, filtros, carrusel y footer
-*/
-
 body {
     background-color: #ffffff;
     color: #000000;
     font-family: 'Segoe UI', Arial, sans-serif;
     width: auto;
     height: auto;
-    padding-top: 70px;
+    
 }
-
 
 /* Navigation */
 .navbar {
     background-color: #1a1a1a !important;
-}
-
-.navbar-nav {
+  }
+  
+  .navbar-nav {
     padding-left: 5%;
-}
-
-.navbar-brand {
+  }
+  
+  .navbar-brand {
     color: #ffffff !important;
     font-weight: bold;
-    font-size: 25px;
+    text-transform: uppercase;
     letter-spacing: 1px;
     padding-left: 2%;
-}
-
-.nav-link {
+  }
+  
+  .nav-link {
     color: #ffffff !important;
     transition: all 0.3s ease;
-}
-
-.nav-link:hover {
+  }
+  
+  .nav-link:hover {
     color: #ff0000 !important;
     text-shadow: 0 0 5px #ff0000;
-}
-
-.navbar-toggler {
+  }
+  
+  .navbar-toggler {
     padding-right: 6%;
-
-
-}
-
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255,255,255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-}
-
-/*@keyframes animate{
-    to{
-        background-position-x: -200px;
-    }
-}
-h{
-    font-size: 1.5rem;
-    color: #ffffff;
-    font-weight: bold;
-    background: url('imagenes/Efecto.jpeg') center;
-    background-size: cover;
-    background-clip: text;
-    color: transparent;
-    animation: animate 10s linear infinite;
-
-}*/
-/* carrusel*/
-
-
-#mainCarousel {
-    width: 100%;
-    height: 70vh;
-    overflow: hidden;
-    border-radius: 20px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-    margin-bottom: 2rem;
-}
-
-#mainCarousel .carousel-item img {
-    object-fit: contain;
-    width: 100%;
-    height: 70vh;
-    border-radius: 20px;
-    transition: transform 0.5s ease-in-out;
-}
-
-/* Gradiente overlay opcional para dar efecto VIP */
-#mainCarousel .carousel-item::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     
-    z-index: 1;
-    border-radius: 20px;
+    
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255,255,255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  }
+.main-content {
+    margin-top: 80px; /* O el valor que necesites */
 }
-
-.carousel-item {
-    position: relative;
-}
-
-/* Indicadores de navegación más visibles (opcional) */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-    padding: 10px;
-}
-
-
 
 /* Product Cards */
 .product {
@@ -121,17 +56,15 @@ h{
     transition: transform 0.3s ease;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
-    height: 100%;
-
-
+    height: 85%;
+    margin-top: 30%;
     justify-content: space-between;
 }
 
 .product:hover {
     transform: scale(1.03);
-
-
-
+    
+    
 }
 
 .product .card {
@@ -185,66 +118,29 @@ h{
     color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-
 /* Reduce product card size on larger screens */
 @media (min-width: 992px) {
     .product {
         max-width: 220px;
-        margin: 10px auto;
+        
     }
-
     .product .card-img-top {
         padding: 10px;
     }
-
     .product .card-body {
         padding: 10px;
     }
-
     .product .card-title {
         font-size: 1rem;
     }
-
     .product .card-text {
         font-size: 0.9rem;
     }
-
     .btn {
         font-size: 0.9rem;
         padding: 6px 10px;
     }
 }
-
-/* Estilos para perfil usuario y logout */
-#profile-container .dropdown-menu {
-    background-color: #f8f9fa;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#profile-container .dropdown-header {
-    font-weight: bold;
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-}
-
-#purchase-history {
-    font-size: 0.9rem;
-    color: #333;
-}
-
-#purchase-history ul {
-    padding-left: 15px;
-}
-
-#purchase-history li {
-    margin-bottom: 5px;
-}
-
-#logout-button {
-    width: 100%;
-}
-
 
 /* Buttons */
 
@@ -253,29 +149,25 @@ h{
     font-weight: bold;
     letter-spacing: 1px;
     transition: all 0.3s ease;
-    background-color: #0D6EFD;
-    color: #ffffff;
-    border-radius: 10px;
+    background-color: #ffffff;
+    color: #000000;
 }
 
 .btn-primary:hover {
     box-shadow: 0 0 15px #fcfafa;
     transform: translateY(-2px);
 }
-
 .btn-outline-primary {
     color: #000000;
     border-color: #ffffff;
     background-color: #ffffff;
-
-
+    
+    
 }
-
-.fa-shopping-cart {
+.fa-shopping-cart{
     color: #000000;
 }
-
-.fa-shopping-cart:hover {
+.fa-shopping-cart:hover{
     color: #ffffff;
 
 }
@@ -285,44 +177,22 @@ h{
     color: #ffffff;
     transform: translateY(-2px);
     box-shadow: 0 0 15px #fcfafa;
-
+    
 }
-
-.ini {
+.ini{
     text-decoration: none;
     color: #000000;
 }
-
-.ini:hover {
+.ini:hover{
     color: #ffffff;
     text-decoration: none;
-
-}
-
-
-
-.social-links a {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    background: #333;
-    color: #ffffff;
-    margin-right: 10px;
-    transition: all 0.3s ease;
-}
-
-.social-links a:hover {
-    background: #ff0000;
-    transform: translateY(-3px);
-    box-shadow: 0 0 10px #ff0000;
+    
 }
 
 /* Chat Elements */
 #chatbot-container {
     background-color: #1a1a1a;
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+    box-shadow: 0 0 20px rgba(255,0,0,0.3);
     z-index: 1000;
     position: fixed;
     bottom: 100px;
@@ -358,14 +228,13 @@ h{
 }
 
 #chat-toggle:hover {
-
+    
     transform: scale(1.1);
 }
 
 #chat-toggle i {
     margin-right: 0;
 }
-
 /* Modal Styles */
 .modal-content {
     background-color: #ffffff;
@@ -392,13 +261,11 @@ h{
     border: 1px solid #333;
     color: #000000;
 }
-
-.mb-1 {
+.mb-1{
     width: 35%;
     padding-right: 10%;
 }
-
-.mb-2 {
+.mb-2{
     width: auto;
     padding-right: 4%;
 }
@@ -409,45 +276,6 @@ h{
     color: #000000;
     box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.25);
 }
-
-
-
-
-/* Filter Menu */
-.filter-menu {
-    margin-bottom: 1.5rem;
-    border: 2px solid #e6e2e2;
-    border-radius: 5px;
-
-}
-
-
-
-.filter-menu .btn {
-    padding: 8px 20px;
-    border-radius: 10px;
-    font-weight: 500;
-    transition: all 0.2s;
-    color: #000000;
-}
-
-.filter-menu .card {
-    border: none;
-    border-radius: 0;
-    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    background-color: #ffffff;
-
-}
-
-.filter-menu label {
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: #000000;
-
-}
-
-
 /* Footer */
 footer {
     background-color: #1a1a1a;
@@ -462,8 +290,7 @@ footer h5 {
     margin-bottom: 20px;
 }
 
-footer p,
-footer a {
+footer p, footer a {
     color: #aaaaaa;
     transition: all 0.3s ease;
 }
