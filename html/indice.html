@@ -170,31 +170,64 @@
     </div>
 
 
-    <div id="mainCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="../imagenes/Red Magic.png" class="d-block w-100 img-fluid" alt="Red Magic 10">
-            </div>
-            <div class="carousel-item">
-                <img src="../imagenes/S23 Ultra Android Phone 8-core.png" class="d-block w-100 img-fluid"
-                    alt="Samsung Galaxy S24 Ultra">
-            </div>
-            <div class="carousel-item">
-                <img src="../imagenes/Iphone.png" class="d-block w-100 img-fluid" alt="iPhone 16 Pro Max">
+    <div class="container my-5">
+        <div class="carousel-wrapper">
+            <div class="card-track">
+                <!-- Repite los elementos para crear bucle visual -->
+                <div class="card1">
+                    <img src="../imagenes/Red magic 10 Pro.png" alt="RedMagic">
+                    <div class="card-text-overlay">
+                        <h5>Red Magic 10 Pro</h5>
+                        <p>Potencia extrema</p>
+                    </div>
+                </div>
+                <div class="card1">
+                    <img src="https://via.placeholder.com/300x400?text=iPhone+Side" alt="Side">
+                    <div class="card-text-overlay">
+                        <h5>iPhone Side</h5>
+                        <p>Diseño moderno</p>
+                    </div>
+                </div>
+                <div class="card1">
+                    <img src="https://via.placeholder.com/300x400?text=iPhone+Back" alt="Back">
+                    <div class="card-text-overlay">
+                        <h5>iPhone Back</h5>
+                        <p>Elegancia total</p>
+                    </div>
+                </div>
+                <div class="card1">
+                    <img src="https://via.placeholder.com/300x400?text=Chip+Life" alt="Chip">
+                    <div class="card-text-overlay">
+                        <h5>Chip A18</h5>
+                        <p>Velocidad garantizada</p>
+                    </div>
+                </div>
+                <div class="card1">
+                    <img src="https://via.placeholder.com/300x400?text=Privacy" alt="Privacy">
+                    <div class="card-text-overlay">
+                        <h5>Privacidad</h5>
+                        <p>Solo tú accedes</p>
+                    </div>
+                </div>
+
+                <!-- Repetir para bucle continuo -->
+                <div class="card1">
+                    <img src="../imagenes/Red magic 10 Pro.png" alt="RedMagic">
+                    <div class="card-text-overlay">
+                        <h5>Red Magic 10 Pro</h5>
+                        <p>Potencia extrema</p>
+                    </div>
+                </div>
+                <div class="card1">
+                    <img src="https://via.placeholder.com/300x400?text=iPhone+Side" alt="Side">
+                    <div class="card-text-overlay">
+                        <h5>iPhone Side</h5>
+                        <p>Diseño moderno</p>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <!-- Botones de navegación 
-        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Siguiente</span>
-        </button>-->
     </div>
-
 
 
 
@@ -240,7 +273,7 @@
             <div id="chat-messages" class="card-body" style="height: 200px; overflow-y: auto;"></div>
             <div class="card-footer">
                 <input type="text" id="chat-input" class="form-control" placeholder="Escribe tu mensaje...">
-                <button id="send-chat" class="btn btn-primary mt-2">Enviar</button>
+                <button id="send-chat" class="btn1 btn-primary mt-2">Enviar</button>
             </div>
         </div>
     </div>
@@ -250,14 +283,15 @@
     </button>
 
     <footer class="bg-dark text-white pt-5 pb-3 mt-5">
+        <h1 class="text-center "><a class="text-white text-decoration-none" href="indice.html">AltaTek</a></h1>
         <div class="container">
-            <div class="row text-center text-md-start">
+            <div class="row text-center text-md-start mt-5">
                 <!-- Contacto -->
                 <div class="col-md-4 mb-4">
                     <h5 class="text-uppercase">Contacto</h5>
                     <p><i class="bi bi-geo-alt-fill me-2"></i>Av. Ejemplo 123, Lima</p>
-                    <p><i class="bi bi-telephone-fill me-2"></i>(01) 123-4567</p>
-                    <p><i class="bi bi-envelope-fill me-2"></i>info@altagamastore.com</p>
+                    <p><i class="bi bi-telephone-fill me-2"></i>(+51) 916703992</p>
+                    <p><i class="bi bi-envelope-fill me-2"></i>emiliocanepa08gmail.com</p>
                 </div>
 
                 <!-- Enlaces rápidos -->
@@ -308,6 +342,8 @@
                 $('html, body').animate({ scrollTop: 0 }, 'smooth');
             });
         });
+
+
     </script>
     <script src="../js/main.js" defer></script>
     <script src="../js/auth.js" defer></script>
