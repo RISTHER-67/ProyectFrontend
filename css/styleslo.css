@@ -34,7 +34,7 @@ body {
 
 /* Navigation */
 .navbar {
-  background-color: #212529 !important;
+  background-color: #000000 !important;
 
 }
 
@@ -125,15 +125,31 @@ a:hover {
   color: #ffffff;
 }
 
-.btn-outline-success {
+
+.register-btn {
+  height: 40px;
+  border-color: #00cc00;
+  background-color: #44454b;
+  color: #00cc00;
+  border-radius: 10px;
+  
+}
+.register-btn:hover {
+  background-color: #00cc00;
+  color: #000000;
+}
+.login-btn{
+  height: 40px;
+  background-color: #44454b;
   border-color: #00cc00;
   color: #00cc00;
+  border-radius: 10px;
+}
+.login-btn:hover{
+  background-color: #00cc00;
+  color: #000000;
 }
 
-.btn-outline-success:hover {
-  background-color: #00cc00;
-  color: #fff;
-}
 
 .btn {
   height: 40px;
@@ -209,4 +225,8 @@ footer p {
   color: #aaaaaa;
   transition: all 0.3s ease;
   text-align: center;
+  width: auto;
+}
+footer{
+  background-color: #000000;
 }

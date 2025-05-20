@@ -1,25 +1,4 @@
-function setupLogin() {
-    const loginForm = document.getElementById('loginForm');
-    if (loginForm) {
-        loginForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = document.getElementById('loginEmail').value;
-            const password = document.getElementById('loginPassword').value;
-            // Usuario y contraseña fijos para demo
-            const validUser = "emilio@demo.com";
-            const validPass = "123456";
-            if (email === validUser && password === validPass) {
-                alert('Inicio de sesión exitoso!');
-                localStorage.setItem('loggedIn', 'true');
-                localStorage.setItem('userEmail', email);
-                $('#loginModal').modal('hide');
-                updateUI();
-            } else {
-                alert('Usuario o contraseña incorrectos');
-            }
-        });
-    }
-}
+
 
 function toggleForms() {
     const loginForm = document.getElementById("loginForm");

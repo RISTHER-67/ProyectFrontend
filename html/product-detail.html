@@ -59,21 +59,35 @@
                 <h5>Características</h5>
                 <ul id="product-features"></ul>
 
-                <h5>Imágenes adicionales</h5>
+                <h5>Videos adicionales</h5>
                 <div id="product-images" class="d-flex flex-wrap"></div>
+                <div class="col-md-6">
+                    <div id="product-video" style="margin-top: 20px;"></div>
+                    <button class="btn btn-success" id="add-to-cart" style="margin: 30px;"
+                    onclick="addToCart(document.getElementById('product-name').textContent)">
+                    Añadir al Carrito</button>
+                </div>
 
-                <button class="btn btn-success" id="add-to-cart"
-                    onclick="addToCart(document.getElementById('product-name').textContent)">Añadir al Carrito</button>
+                
             </div>
         </div>
     </div>
     <!-- Sección de Productos Destacados similar a indice.html -->
     <div class="container mt-4">
-
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 gy-4" id="product-list">
-            <!-- Aquí se agregan los productos dinámicamente con JS -->
+        <!-- Mensaje sin resultados -->
+        <div id="no-results" class="alert alert-warning text-center" style="display:none">
+            No se encontraron productos con esos criterios
         </div>
 
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="product-list">
+            <!-- Aquí se agregan los productos dinámicamente con JS -->
+        </div>
+        <!-- Sentinela para scroll infinito -->
+        <div id="sentinel" class="my-4 text-center">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Cargando...</span>
+            </div>
+        </div>
         <div id="no-results" class="text-center text-muted" style="display:none;">
             No se encontraron productos.
         </div>
@@ -146,7 +160,7 @@
         </div>
     </div>
 
-    <footer class="bg-dark text-white pt-5 pb-3 mt-5">
+    <footer class=" text-white pt-5 pb-3 mt-5">
         <div class="container">
             <div class="row text-center text-md-start">
                 <!-- Contacto -->
@@ -173,9 +187,12 @@
                 <!-- Redes Sociales -->
                 <div class="col-md-4 mb-4">
                     <h5 class="text-uppercase">Síguenos</h5>
-                    <a href="https://www.facebook.com/emilio.canepa.39/" class="text-white fs-5 me-3" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
-                    <a href="https://x.com/" class="text-white fs-5 me-3" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter"></i></a>
-                    <a href="https://www.instagram.com/" class="text-white fs-5" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.facebook.com/emilio.canepa.39/" class="text-white fs-5 me-3" target="_blank"
+                        rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
+                    <a href="https://x.com/" class="text-white fs-5 me-3" target="_blank" rel="noopener noreferrer"><i
+                            class="bi bi-twitter"></i></a>
+                    <a href="https://www.instagram.com/" class="text-white fs-5" target="_blank"
+                        rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
                 </div>
             </div>
 

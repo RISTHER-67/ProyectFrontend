@@ -1,140 +1,122 @@
 [
-  {
-      "name": "iPhone 16 Pro Max",
-      "brand": "iPhone",
-      "price": 1899,
-      "storage": "512GB/1TB",
-      "image": "../imagenes/Iphone 16 Pro Max.png",
-      "images": [
-          "../imagenes/Iphone 16 pro max.jpg",
-          "../imagenes/Iphone 16 pro1.jpg"
-      ],
-      "description": "El iPhone 16 Pro Max ofrece un rendimiento excepcional con su chip Apple A18 Pro.",
-      "features": [
-          "Pantalla de 6.9 pulgadas con una Tasa de refresco de 120Hz",
-          "Cámara Cuádruple, 48MP+48MP +12MP+ToF",
-          "Resistencia a las salpicaduras, el agua y el polvo Calificación IP68 según la norma IEC 60529 (hasta 6 metros de profundidad durante un máximo de 30 minutos)",
-          "Batería de larga duración"
-      ]
-  },
-  {
-      "name": "Samsung Galaxy S24 Ultra",
-      "brand": "Samsung",
-      "price": 1199,
-      "storage": "256 GB",
-      "image": "../imagenes/PIC1771002_RL_07.png",
-      "images": [
-          "../imagenes/Samsung s24 1.jpg",
-          "../imagenes/Samsung s24 2.jpg"
-      ],
-      "description": "Samsung Galaxy S24 Ultra con cámara avanzada y pantalla Dynamic AMOLED 2X.",
-      "features": [
-          "Pantalla Dynamic AMOLED 6.8 pulgadas",
-          "Cámara cuádruple de 108 MP",
-          "Carga rápida de 45W",
-          "S-Pen integrado"
-      ]
-  },
-  {
-      "name": "iPhone 15 Pro Max",
-      "brand": "iPhone",
-      "price": 1099,
-      "storage": "256 GB",
-      "image": "../imagenes/IPhone 15 Pro Max.png",
-      "images": [],
-      "description": "iPhone 14 Pro con tecnología avanzada y diseño elegante.",
-      "features": [
-          "Pantalla OLED de 6.1 pulgadas",
-          "Cámara dual de 12 MP",
-          "Face ID",
-          "iOS 16"
-      ]
-  },
-  {
-      "name": "Red Magic 9 Pro",
-      "brand": "Red Magic",
-      "price": 999,
-      "storage": "256 GB",
-      "image": "../imagenes/Red magic 9 Pro.png",
-      "images": [],
-      "description": "Red Magic 8 Pro, smartphone para gamers con alto rendimiento.",
-      "features": [
-          "Pantalla AMOLED de 6.8 pulgadas",
-          "Procesador Snapdragon 8 Gen 2",
-          "Sistema de refrigeración avanzado",
-          "Batería de 4500 mAh"
-      ]
-  },
-  {
-      "name": "Red Magic 10 Pro",
-      "brand": "Red Magic",
-      "price": 1299,
-      "storage": "1TB",
-      "image": "../imagenes/Red magic 10 Pro.png",
-      "images": [
-          "../imagenes/Red magic 10.jpeg",
-          "../imagenes/Red magic 11.jpeg"
-      ],
-      "description": "Red Magic 10 Pro con características de alta gama para juegos intensos.",
-      "features": [
-          "Pantalla AMOLED de 6.67 pulgadas",
-          "Procesador Snapdragon 8 Gen 1",
-          "Carga rápida de 165W",
-          "Batería de 4500 mAh"
-      ]
-  },
-  {
-      "name": "Samsung Galaxy S25 Ultra",
-      "brand": "Samsung",
-      "price": 1300,
-      "storage": "256 GB",
-      "image": "../imagenes/Samsung Galaxy S25 Ultra.png",
-      "images": [
-          "https://via.placeholder.com/100",
-          "https://via.placeholder.com/100"
-      ],
-      "description": "Google Pixel 8 Pro con cámara avanzada y rendimiento optimizado.",
-      "features": [
-          "Pantalla OLED de 6.7 pulgadas",
-          "Cámara triple de 50 MP",
-          "Procesador Google Tensor G3",
-          "Batería de larga duración"
-      ]
-  },
-  {
-      "name": "Red Magic 8 Pro",
-      "brand": "Red Magic",
-      "price": 799,
-      "storage": "256 GB",
-      "image": "../imagenes/Red Magic 8 Pro.png",
-      "images": [
-          "https://via.placeholder.com/100",
-          "https://via.placeholder.com/100"
-      ],
-      "description": "OnePlus 12 con carga rápida y pantalla AMOLED fluida.",
-      "features": [
-          "Pantalla AMOLED de 6.7 pulgadas",
-          "Cámara triple de 48 MP",
-          "Carga rápida de 100W",
-          "Batería de 4500 mAh"
-      ]
-  },
-  {
-      "name": "Sony Xperia 1 V",
-      "brand": "Sony",
-      "price": 1199,
-      "storage": "512 GB",
-      "image": "https://via.placeholder.com/150",
-      "images": [
-          "https://via.placeholder.com/100",
-          "https://via.placeholder.com/100"
-      ],
-      "description": "Sony Xperia 1 V con pantalla 4K y cámara profesional.",
-      "features": [
-          "Pantalla OLED 4K de 6.5 pulgadas",
-          "Cámara triple de 12 MP",
-          "Procesador Snapdragon 8 Gen 2",
-          "Batería de 5000 mAh"
-      ]
-  }
+    {
+        "name": "iPhone 16 Pro Max",
+        "brand": "iPhone",
+        "price": 1899,
+        "storage": "512GB/1TB",
+        "image": "../imagenes/Iphone 16 Pro Max.png",
+        "video":"../videos/Iphone 16 Pro Max.mp4",
+        "description": "El iPhone 16 Pro Max ofrece un rendimiento excepcional con su chip Apple A18 Pro.",
+        "features": [
+            "Pantalla de 6.9 pulgadas con una Tasa de refresco de 120Hz",
+            "Cámara Cuádruple, 48MP+48MP +12MP+ToF",
+            "Resistencia a las salpicaduras, el agua y el polvo Calificación IP68 según la norma IEC 60529 (hasta 6 metros de profundidad durante un máximo de 30 minutos)",
+            "Batería de larga duración"
+        ]
+    },
+    {
+        "name": "Samsung Galaxy S24 Ultra",
+        "brand": "Samsung",
+        "price": 1199,
+        "storage": "256 GB",
+        "image": "../imagenes/PIC1771002_RL_07.png",
+        "video": "../videos/Samsung s25.mp4",
+        "description": "Samsung Galaxy S24 Ultra con cámara avanzada y pantalla Dynamic AMOLED 2X.",
+        "features": [
+            "Pantalla Dynamic AMOLED 6.8 pulgadas",
+            "Cámara cuádruple de 108 MP",
+            "Carga rápida de 45W",
+            "S-Pen integrado"
+        ]
+    },
+    {
+        "name": "iPhone 15 Pro Max",
+        "brand": "iPhone",
+        "price": 1099,
+        "storage": "256 GB",
+        "image": "../imagenes/IPhone 15 Pro Max.png",
+        "video": "",
+        "description": "iPhone 14 Pro con tecnología avanzada y diseño elegante.",
+        "features": [
+            "Pantalla OLED de 6.1 pulgadas",
+            "Cámara dual de 12 MP",
+            "Face ID",
+            "iOS 16"
+        ]
+    },
+    {
+        "name": "Red Magic 9 Pro",
+        "brand": "Red Magic",
+        "price": 999,
+        "storage": "256 GB",
+        "image": "../imagenes/Red magic 9 Pro.png",
+        "video": "",
+        "description": "Red Magic 8 Pro, smartphone para gamers con alto rendimiento.",
+        "features": [
+            "Pantalla AMOLED de 6.8 pulgadas",
+            "Procesador Snapdragon 8 Gen 2",
+            "Sistema de refrigeración avanzado",
+            "Batería de 4500 mAh"
+        ]
+    },
+    {
+        "name": "Red Magic 10 Pro",
+        "brand": "Red Magic",
+        "price": 1299,
+        "storage": "1TB",
+        "image": "../imagenes/Red magic 10 Pro.png",
+        "video":"../videos/RedMagic 10 Pro.mp4",
+        "description": "Red Magic 10 Pro con características de alta gama para juegos intensos.",
+        "features": [
+            "Pantalla AMOLED de 6.67 pulgadas",
+            "Procesador Snapdragon 8 Gen 1",
+            "Carga rápida de 165W",
+            "Batería de 4500 mAh"
+        ]
+    },
+    {
+        "name": "Samsung Galaxy S25 Ultra",
+        "brand": "Samsung",
+        "price": 1300,
+        "storage": "256 GB",
+        "image": "../imagenes/Samsung Galaxy S25 Ultra.png",
+        "video": "",
+        "description": "Google Pixel 8 Pro con cámara avanzada y rendimiento optimizado.",
+        "features": [
+            "Pantalla OLED de 6.7 pulgadas",
+            "Cámara triple de 50 MP",
+            "Procesador Google Tensor G3",
+            "Batería de larga duración"
+        ]
+    },
+    {
+        "name": "Red Magic 8 Pro",
+        "brand": "Red Magic",
+        "price": 799,
+        "storage": "256 GB",
+        "image": "../imagenes/Red Magic 8 Pro.png",
+        "video": "",
+        "description": "OnePlus 12 con carga rápida y pantalla AMOLED fluida.",
+        "features": [
+            "Pantalla AMOLED de 6.7 pulgadas",
+            "Cámara triple de 48 MP",
+            "Carga rápida de 100W",
+            "Batería de 4500 mAh"
+        ]
+    },
+    {
+        "name": "Sony Xperia 1 V",
+        "brand": "Sony",
+        "price": 1199,
+        "storage": "512 GB",
+        "image": "https://via.placeholder.com/150",
+        "video": "",
+        "description": "Sony Xperia 1 V con pantalla 4K y cámara profesional.",
+        "features": [
+            "Pantalla OLED 4K de 6.5 pulgadas",
+            "Cámara triple de 12 MP",
+            "Procesador Snapdragon 8 Gen 2",
+            "Batería de 5000 mAh"
+        ]
+    }
 ]

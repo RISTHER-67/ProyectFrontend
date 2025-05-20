@@ -4,68 +4,87 @@ body {
     font-family: 'Segoe UI', Arial, sans-serif;
     width: auto;
     height: auto;
-    
+
 }
 
 /* Navigation */
 .navbar {
     background-color: #1a1a1a !important;
-  }
-  
-  .navbar-nav {
+}
+
+.navbar-nav {
     padding-left: 5%;
-  }
-  
-  .navbar-brand {
+}
+
+.navbar-brand {
     color: #ffffff !important;
     font-weight: bold;
-    text-transform: uppercase;
     letter-spacing: 1px;
     padding-left: 2%;
-  }
-  
-  .nav-link {
+}
+
+.nav-link {
     color: #ffffff !important;
     transition: all 0.3s ease;
-  }
-  
-  .nav-link:hover {
-    color: #ff0000 !important;
-    text-shadow: 0 0 5px #ff0000;
-  }
-  
-  .navbar-toggler {
+}
+
+.nav-link:hover {
+    color: #9f9b9b !important;
+
+}
+
+.navbar-toggler {
     padding-right: 6%;
-    
-    
-  }
-  
-  .navbar-toggler-icon {
+
+
+}
+
+.navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255,255,255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-  }
+}
+
 .main-content {
-    margin-top: 80px; /* O el valor que necesites */
+    margin-top: 80px;
+    /* O el valor que necesites */
 }
 
 /* Product Cards */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .product {
     background-color: #fdfafa;
-    border: 2px solid #e6e2e2;
+    border: 3px solid #1A1A1A;
     padding: 0;
     overflow: hidden;
     transition: transform 0.3s ease;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
-    height: 85%;
     margin-top: 30%;
+    
     justify-content: space-between;
 }
 
 .product:hover {
     transform: scale(1.03);
-    
-    
+
+
 }
+video {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    border-radius: 30px;
+}
+
 
 .product .card {
     background-color: transparent;
@@ -102,15 +121,14 @@ body {
 }
 
 .product .btn {
-    background-color: #007BFF;
-    border: none;
+    background-color: #ffffff;
+    border: 3px solid #1A1A1A;
     border-radius: 10px;
-    text-transform: uppercase;
     font-weight: bold;
-    letter-spacing: 1px;
     transition: all 0.3s ease;
-    color: #fff;
+    color: #000000;
     margin-top: auto;
+    
 }
 
 .product .btn:hover {
@@ -118,24 +136,30 @@ body {
     color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+
 /* Reduce product card size on larger screens */
 @media (min-width: 992px) {
     .product {
         max-width: 220px;
-        
+        margin: 10px auto;
     }
+
     .product .card-img-top {
         padding: 10px;
     }
+
     .product .card-body {
         padding: 10px;
     }
+
     .product .card-title {
         font-size: 1rem;
     }
+
     .product .card-text {
         font-size: 0.9rem;
     }
+
     .btn {
         font-size: 0.9rem;
         padding: 6px 10px;
@@ -143,6 +167,18 @@ body {
 }
 
 /* Buttons */
+.btn-success {
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #1A1A1A;
+
+}
+
+.btn-success:hover {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+}
 
 .btn-primary {
     text-transform: uppercase;
@@ -151,48 +187,60 @@ body {
     transition: all 0.3s ease;
     background-color: #ffffff;
     color: #000000;
+    border: none;
 }
 
 .btn-primary:hover {
     box-shadow: 0 0 15px #fcfafa;
     transform: translateY(-2px);
+    background-color: #000000;
+    color: #ffffff;
 }
+
 .btn-outline-primary {
     color: #000000;
-    border-color: #ffffff;
     background-color: #ffffff;
-    
-    
+    border: none;
+
+
+
+
 }
-.fa-shopping-cart{
+
+.fa-shopping-cart {
     color: #000000;
 }
-.fa-shopping-cart:hover{
+
+.fa-shopping-cart:hover {
     color: #ffffff;
 
 }
 
 .btn-outline-primary:hover {
-    background: #0D6EFD;
+    background: #1a1a1a;
     color: #ffffff;
+    border-color: #fdfafa;
     transform: translateY(-2px);
     box-shadow: 0 0 15px #fcfafa;
-    
+
+
 }
-.ini{
+
+.ini {
     text-decoration: none;
     color: #000000;
 }
-.ini:hover{
+
+.ini:hover {
     color: #ffffff;
     text-decoration: none;
-    
+
 }
 
 /* Chat Elements */
 #chatbot-container {
     background-color: #1a1a1a;
-    box-shadow: 0 0 20px rgba(255,0,0,0.3);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
     z-index: 1000;
     position: fixed;
     bottom: 100px;
@@ -228,17 +276,18 @@ body {
 }
 
 #chat-toggle:hover {
-    
+
     transform: scale(1.1);
 }
 
 #chat-toggle i {
     margin-right: 0;
 }
+
 /* Modal Styles */
 .modal-content {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #313030;
+    color: #ffffff;
     border: 2px solid #000000;
     border-radius: 20;
 }
@@ -261,11 +310,13 @@ body {
     border: 1px solid #333;
     color: #000000;
 }
-.mb-1{
+
+.mb-1 {
     width: 35%;
     padding-right: 10%;
 }
-.mb-2{
+
+.mb-2 {
     width: auto;
     padding-right: 4%;
 }
@@ -276,6 +327,7 @@ body {
     color: #000000;
     box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.25);
 }
+
 /* Footer */
 footer {
     background-color: #1a1a1a;
@@ -290,7 +342,8 @@ footer h5 {
     margin-bottom: 20px;
 }
 
-footer p, footer a {
+footer p,
+footer a {
     color: #aaaaaa;
     transition: all 0.3s ease;
 }
@@ -302,7 +355,7 @@ footer a:hover {
 
 /* Estilos para el carrito de compras */
 .cart-item {
-    background-color: #ffffff;
+    background-color: #151414;
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 15px;
@@ -324,20 +377,23 @@ footer a:hover {
 }
 
 .total-box {
-    background-color: #ffffff;
+    background-color: #151414;
     border: 1px solid #000000;
     padding: 20px;
     margin-top: 20px;
     border-radius: 10px;
+    color: #ffffff;
 }
-
+.btn-sm{
+    color: #fcfafa;
+}
 .summary-text {
     font-size: 14px;
-    color: #000000;
+    color: #ffffff;
 }
 
 .footer-icons {
-    color: #000000;
+    color: #ffffff;
     font-size: 14px;
 }
 

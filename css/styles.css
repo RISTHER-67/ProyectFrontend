@@ -35,8 +35,8 @@ body {
 }
 
 .nav-link:hover {
-    color: #ff0000 !important;
-    text-shadow: 0 0 5px #ff0000;
+    color: #938c8c !important;
+
 }
 
 
@@ -45,81 +45,128 @@ body {
     background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255,255,255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
-/*@keyframes animate{
-    to{
-        background-position-x: -200px;
+
+/* carrusel*/
+.tracking-in-expand {
+    -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+@-webkit-keyframes tracking-in-expand {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
-h{
+
+@keyframes tracking-in-expand {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+h2 {
     font-size: 1.5rem;
-    color: #ffffff;
+
     font-weight: bold;
     background: url('imagenes/Efecto.jpeg') center;
     background-size: cover;
     background-clip: text;
-    color: transparent;
-    animation: animate 10s linear infinite;
+    animation: linear infinite;
 
-}*/
-/* carrusel*/
-.carousel-wrapper {
-    overflow: hidden;
-    position: relative;
 }
 
-.card-track {
+.carousel-item {
+    height: 100vh;
     display: flex;
-    gap: 1rem;
-    animation: scrollCards 30s linear infinite;
+    align-items: center;
+    justify-content: center;
 }
 
-@keyframes scrollCards {
-    0% {
-        transform: translateX(0%);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-.card1 {
-    min-width: 300px;
-    height: 400px;
-    border-radius: 20px;
-    overflow: hidden;
-    position: relative;
-    flex-shrink: 0;
-}
-
-.card1 img {
+.carousel-content {
+    display: flex;
+    flex-direction: row;
     width: 100%;
     height: 100%;
-    object-fit: cover;
 }
 
-.card-text-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 1rem;
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
+.text-side,
+.image-side {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.text-side {
+    background-color: #f8f9fa;
     text-align: center;
 }
 
+.text-side h2 {
+    font-size: 2.5rem;
+}
+
+.text-side p {
+    font-size: 1.2rem;
+}
+
+.image-side img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: cover;
+}
+
 @media (max-width: 768px) {
-    .card1 {
-        height: 300px;
-        min-width: 250px;
+    .carousel-content {
+        flex-direction: column;
+    }
+
+    .text-side,
+    .image-side {
+        flex: none;
+        width: 100%;
+        height: 50%;
+    }
+
+    .text-side h2 {
+        font-size: 2rem;
     }
 }
 
 /* Product Cards */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .product {
     background-color: #fdfafa;
-    border: 3px solid #0D6EFD;
+    border: 3px solid #1A1A1A;
     padding: 0;
     overflow: hidden;
     transition: transform 0.3s ease;
@@ -173,13 +220,13 @@ h{
 }
 
 .product .btn {
-    background-color: #007BFF;
-    border: none;
+    background-color: #ffffff;
+    border: 3px solid #1A1A1A;
     border-radius: 10px;
     font-weight: bold;
     letter-spacing: 1px;
     transition: all 0.3s ease;
-    color: #fff;
+    color: #000000;
     margin-top: auto;
 }
 
@@ -252,8 +299,8 @@ h{
 /* Buttons */
 
 .btn-primary {
-    text-transform: uppercase;
     font-weight: bold;
+    border: none;
     letter-spacing: 1px;
     transition: all 0.3s ease;
     background-color: #ffffff;
@@ -265,8 +312,9 @@ h{
     font-weight: bold;
     letter-spacing: 1px;
     transition: all 0.3s ease;
-    background-color: #007BFF;
-    color: #ffffff;
+    background-color: #ffffff;
+    border: 2px solid #1A1A1A;
+    color: #000000;
     border-radius: 5px;
 }
 
@@ -276,13 +324,14 @@ h{
 }
 
 .btn-primary:hover {
+    background-color: #1A1A1A;
     box-shadow: 0 0 15px #fcfafa;
     transform: translateY(-2px);
 }
 
 .btn-outline-primary {
     color: #000000;
-    border-color: #ffffff;
+    border: none;
     background-color: #ffffff;
 
 
@@ -298,10 +347,10 @@ h{
 }
 
 .btn-outline-primary:hover {
-    background: #0D6EFD;
+    background: #000000;
     color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 0 15px #fcfafa;
+
 
 }
 
@@ -387,8 +436,8 @@ h{
 
 /* Modal Styles */
 .modal-content {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #313030;
+    color: #ffffff;
     border: 2px solid #000000;
     border-radius: 20;
 }
@@ -493,9 +542,10 @@ footer a:hover {
     text-decoration: none;
 }
 
+
 /* Estilos para el carrito de compras */
 .cart-item {
-    background-color: #ffffff;
+    background-color: #151414;
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 15px;
@@ -517,20 +567,21 @@ footer a:hover {
 }
 
 .total-box {
-    background-color: #ffffff;
+    background-color: #151414;
     border: 1px solid #000000;
     padding: 20px;
     margin-top: 20px;
     border-radius: 10px;
+    color: #ffffff;
 }
 
 .summary-text {
     font-size: 14px;
-    color: #000000;
+    color: #ffffff;
 }
 
 .footer-icons {
-    color: #000000;
+    color: #ffffff;
     font-size: 14px;
 }
 

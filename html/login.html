@@ -33,10 +33,10 @@
       <!-- Login Form -->
       <div class="form-content show  p-5 rounded" id="loginForm">
         <h2 class="mb-4 text-center fw-bold">Login</h2>
-        <form>
+        <form >
           <div class="mb-3 input-group">
             <span class="input-group-text bg-dark text-white border-secondary"><i class="bi bi-person"></i></span>
-            <input type="text" class="form-control bg-dark text-white border-secondary" placeholder="Username or Email"
+            <input type="text" class="form-control bg-dark text-white border-secondary" placeholder="Username"
               id="loginEmail" required>
           </div>
 
@@ -51,7 +51,7 @@
           </div>
 
           <div class="d-grid mb-3">
-            <button type="submit" class="btn btn-outline-success">Login</button>
+            <button  type="submit" class="login-btn btn-outline-success">Login</button>
           </div>
 
           <div class="d-grid mb-3">
@@ -83,19 +83,21 @@
             <span class="input-group-text bg-dark text-white"><i class="bi bi-envelope"></i></span>
             <input type="email" class="form-control bg-dark text-white" placeholder="Email" required>
           </div>
+          
+          <div class="mb-3 input-group">
+            <span class="input-group-text bg-dark text-white"><i class="bi bi-telephone"></i></span>
+            <input type="tel" class="form-control bg-dark text-white" placeholder="Telefono" required>
+          </div>
 
           <div class="mb-3 input-group">
             <span class="input-group-text bg-dark text-white"><i class="bi bi-lock"></i></span>
             <input type="password" class="form-control bg-dark text-white" placeholder="Password" required>
           </div>
 
-          <div class="mb-3 input-group">
-            <span class="input-group-text bg-dark text-white"><i class="bi bi-lock"></i></span>
-            <input type="password" class="form-control bg-dark text-white" placeholder="Re-enter Password" required>
-          </div>
+          
 
           <div class="d-grid mb-3">
-            <button type="submit" class="btn btn-outline-success">Registrar</button>
+            <button type="submit" class="register-btn ">Registrar</button>
           </div>
 
           <div class="text-center">
@@ -122,14 +124,16 @@
 
   </div>
   </div>
-  <footer class="bg-dark text-white py-4 mt-5">
-    <div class="bg-dark">
+  <footer class="text-white pt-5 pb-3 mt-5">
+    <div class="container">
       <p class="mb-0">&copy; 2023 AltaGama Store. Todos los derechos reservados.</p>
     </div>
     </div>
   </footer>
   <script src="../js/main.js"></script>
   <script src="../js/auth.js"></script>
+  <script src="../js/register.js"></script>
+  <script src="../js/login.js"></script>
 
 </body>
 
