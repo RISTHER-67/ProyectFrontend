@@ -30,7 +30,7 @@ function loadNextBatch() {
                         <h5 class="card-title" onclick="viewProductDetail('${product.id}')" style="cursor:pointer">${product.name}</h5>
                         <p class="card-text">${product.storage}</p>
                         <p class="card-text">$${product.price}</p>
-<button class="btn btn-success" onclick="addToCart('${product.name}')">Añadir al Carrito</button>
+                        <button class="btn btn-success" onclick="addToCart('${product.name}')">Añadir al Carrito</button>
                     </div>
                 </div>
             </div>
