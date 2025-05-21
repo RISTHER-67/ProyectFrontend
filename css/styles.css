@@ -82,16 +82,7 @@ body {
     }
 }
 
-h2 {
-    font-size: 1.5rem;
 
-    font-weight: bold;
-    background: url('imagenes/Efecto.jpeg') center;
-    background-size: cover;
-    background-clip: text;
-    animation: linear infinite;
-
-}
 
 .carousel-item {
     height: 100vh;

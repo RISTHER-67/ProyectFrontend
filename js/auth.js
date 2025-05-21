@@ -1,10 +1,8 @@
-
-
 function toggleForms() {
     const loginForm = document.getElementById("loginForm");
     const registerForm = document.getElementById("registerForm");
-    loginForm.classList.toggle("show");
-    registerForm.classList.toggle("show");
+    if (loginForm) loginForm.classList.toggle("show");
+    if (registerForm) registerForm.classList.toggle("show");
 }
 
 function updateUI() {
@@ -14,13 +12,15 @@ function updateUI() {
     const profileDropdown = document.getElementById('profileDropdown');
 
     if (loggedIn) {
-        loginContainer.classList.add('d-none');
-        profileContainer.classList.remove('d-none');
-        const userEmail = localStorage.getItem('userEmail');
-        profileDropdown.textContent = userEmail;
+        if (loginContainer) loginContainer.classList.add('d-none');
+        if (profileContainer) profileContainer.classList.remove('d-none');
+        if (profileDropdown) {
+            const userEmail = localStorage.getItem('userEmail');
+            profileDropdown.textContent = userEmail;
+        }
     } else {
-        loginContainer.classList.remove('d-none');
-        profileContainer.classList.add('d-none');
+        if (loginContainer) loginContainer.classList.remove('d-none');
+        if (profileContainer) profileContainer.classList.add('d-none');
     }
 }
 
@@ -34,6 +34,14 @@ function setupLogout() {
             alert('Sesión cerrada');
         });
     }
+}
+
+function setupLogin() {
+    // Aquí puedes agregar la lógica para inicializar el login, por ejemplo:
+    // - Mostrar formularios
+    // - Manejar eventos de login
+    // Por ahora, solo un log para evitar el error
+    console.log('setupLogin ejecutado');
 }
 
 // Ejecutar al cargar la página
