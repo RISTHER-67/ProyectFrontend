@@ -78,7 +78,7 @@ document
       if (response.ok) {
         alert("¡Pedido registrado con éxito!");
         localStorage.removeItem("cart");
-        window.location.href = "gracias.html";
+        window.location.href = "../html/indice.html";
       } else {
         alert(data.message || "Ocurrió un error al registrar el pedido.");
       }

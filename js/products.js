@@ -3,12 +3,14 @@ let allProducts = [];
 let productsLoaded = 0;
 const batchSize = 8;
 
-function loadProducts() {
+function loadProducts(callback) {
     fetch("http://localhost:3000/api/products")
         .then((response) => response.json())
         .then((data) => {
             allProducts = data;
+            window.allProducts = allProducts; // Exponer globalmente para filtros
             loadNextBatch();
+            if (callback) callback();
         })
         .catch((error) =>
             console.error("Error al cargar los productos desde la API:", error)

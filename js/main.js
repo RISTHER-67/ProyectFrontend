@@ -1,8 +1,9 @@
 // main.js
 document.addEventListener("DOMContentLoaded", () => {
-    loadProducts();
+    loadProducts(() => {
+        setupFilters();
+    });
     setupChatbot();
     setupLogin();
-    setupFilters();
     loadCart();
 });
