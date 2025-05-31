@@ -34,7 +34,7 @@
       <!-- Login Form -->
       <div class="form-content show  p-5 rounded" id="loginForm">
         <h2 class="mb-4 text-center fw-bold">Login</h2>
-        <form >
+        <form>
           <div class="mb-3 input-group">
             <span class="input-group-text bg-dark text-white border-secondary"><i class="bi bi-person"></i></span>
             <input type="text" class="form-control bg-dark text-white border-secondary" placeholder="Username"
@@ -52,16 +52,22 @@
           </div>
 
           <div class="d-grid mb-3">
-            <button  type="submit" class="login-btn btn-outline-success">Login</button>
+            <button type="submit" class="login-btn btn-outline-success">Login</button>
           </div>
 
           <div class="d-grid mb-3">
-            <button type="button" class="btn btn-dark d-flex justify-content-center align-items-center">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google logo"
-                width="20" class="me-2"><a
-                href="https://accounts.google.com/v3/signin/accountchooser?authuser=0&continue=https%3A%2F%2Fwww.google.com.pe%2F%3Fhl%3Des&ec=GAlAmgQ&hl=es&flowName=GlifWebSignIn&flowEntry=AddSession&dsh=S1445294599%3A1745682957648376">
-                Sign-in with Google</a>
-
+            <button type="button" id="google-login-btn" class="google-btn">
+              <svg class="google-icon" viewBox="0 0 24 24" width="20" height="20">
+                <path fill="#4285F4"
+                  d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                <path fill="#34A853"
+                  d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                <path fill="#FBBC05"
+                  d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+                <path fill="#EA4335"
+                  d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+              </svg>
+              Continuar con Google
             </button>
           </div>
 
@@ -84,7 +90,7 @@
             <span class="input-group-text bg-dark text-white"><i class="bi bi-envelope"></i></span>
             <input type="email" class="form-control bg-dark text-white" placeholder="Email" required>
           </div>
-          
+
           <div class="mb-3 input-group">
             <span class="input-group-text bg-dark text-white"><i class="bi bi-telephone"></i></span>
             <input type="tel" class="form-control bg-dark text-white" placeholder="Telefono" required>
@@ -95,7 +101,7 @@
             <input type="password" class="form-control bg-dark text-white" placeholder="Password" required>
           </div>
 
-          
+
 
           <div class="d-grid mb-3">
             <button type="submit" class="register-btn ">Registrar</button>
@@ -131,6 +137,508 @@
     </div>
     </div>
   </footer>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import {
+      getAuth,
+      GoogleAuthProvider,
+      signInWithPopup,
+      signOut,
+      onAuthStateChanged,
+    } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCKYvDQcyes_FoUmJJFKsNa0ZlgrpHnG60",
+      authDomain: "auth-62c14.firebaseapp.com",
+      projectId: "auth-62c14",
+      storageBucket: "auth-62c14.firebasestorage.app",
+      messagingSenderId: "924651705622",
+      appId: "1:924651705622:web:810be4237a91c81708ac37",
+      measurementId: "G-KVWFTYHL4X"
+    };
+    console.log("Inicializando Firebase para Google Login...");
+
+    try {
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      const googleProvider = new GoogleAuthProvider();
+
+      googleProvider.addScope("email");
+      googleProvider.addScope("profile");
+
+      googleProvider.setCustomParameters({
+        prompt: "select_account",
+      });
+
+      console.log("Firebase inicializado correctamente");
+
+      // Hacer disponibles globalmente
+      window.firebaseAuth = auth;
+      window.googleProvider = googleProvider;
+      window.signInWithPopup = signInWithPopup;
+      window.signOut = signOut;
+      window.onAuthStateChanged = onAuthStateChanged;
+
+      console.log("Google Login disponible");
+    } catch (error) {
+      console.error("❌ Error al inicializar Firebase:", error);
+      alert("Error de configuración Firebase: " + error.message);
+    }
+  </script>
+
+  <script>
+    console.log("Sistema de Login con Google iniciado");
+
+    // Esperar a que Firebase esté listo
+    const waitForFirebase = () => {
+      return new Promise((resolve) => {
+        const checkFirebase = () => {
+          if (
+            window.firebaseAuth &&
+            window.googleProvider &&
+            window.signInWithPopup
+          ) {
+            console.log("Firebase listo para usar");
+            resolve();
+          } else {
+            console.log("⏳ Esperando Firebase...");
+            setTimeout(checkFirebase, 100);
+          }
+        };
+        checkFirebase();
+      });
+    };
+
+    document.addEventListener("DOMContentLoaded", async function () {
+      console.log(" DOM cargado");
+
+      // Esperar Firebase
+      await waitForFirebase();
+
+      // **CONFIGURACIÓN**
+      const API_URL = "http://localhost:3000/api";
+
+      // **ELEMENTOS DEL DOM**
+      const elements = {
+        container: document.querySelector(".container"),
+        loginForm: document.getElementById("loginForm"),
+        registerForm: document.getElementById("registerForm"),
+        googleLoginBtn: document.getElementById("google-login-btn"),
+        googleRegisterBtn: document.getElementById("google-register-btn"),
+        registerBtn: document.querySelector(".register-btn"),
+        loginBtn: document.querySelector(".login-btn"),
+        goToRegister: document.getElementById("go-to-register"),
+        goToLogin: document.getElementById("go-to-login"),
+      };
+
+      console.log("Elementos encontrados:", {
+        container: !!elements.container,
+        loginForm: !!elements.loginForm,
+        registerForm: !!elements.registerForm,
+        googleLoginBtn: !!elements.googleLoginBtn,
+        googleRegisterBtn: !!elements.googleRegisterBtn,
+      });
+
+      // **NAVEGACIÓN ENTRE FORMULARIOS**
+      const showRegister = () => {
+        console.log("🔄 Mostrando formulario de registro");
+        elements.container.classList.add("active");
+      };
+
+      const showLogin = () => {
+        console.log("🔄 Mostrando formulario de login");
+        elements.container.classList.remove("active");
+      };
+
+      // Event listeners para navegación
+      elements.registerBtn?.addEventListener("click", showRegister);
+      elements.goToRegister?.addEventListener("click", (e) => {
+        e.preventDefault();
+        showRegister();
+      });
+
+      elements.loginBtn?.addEventListener("click", showLogin);
+      elements.goToLogin?.addEventListener("click", (e) => {
+        e.preventDefault();
+        showLogin();
+      });
+
+      // **VALIDACIÓN DE SERVIDOR**
+      const validateServer = async () => {
+        try {
+          console.log("Validando servidor...");
+          const response = await fetch(`${API_URL}`, {
+            method: "GET",
+            headers: { "Content-Type": "application/json" },
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            console.log("✅ Servidor validado:", data.mensaje);
+            return true;
+          } else {
+            console.log("⚠️ Servidor error:", response.status);
+            return false;
+          }
+        } catch (error) {
+          console.log("❌ Error conexión servidor:", error.message);
+          return false;
+        }
+      };
+
+      // Validar servidor al cargar
+      validateServer();
+
+      // **SISTEMA DE MENSAJES**
+      const showMessage = (message, type = "info") => {
+        const messageDiv = document.createElement("div");
+        messageDiv.textContent = message;
+        messageDiv.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            border-radius: 8px;
+            color: white;
+            font-weight: 500;
+            z-index: 1000;
+            max-width: 350px;
+            word-wrap: break-word;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            background-color: ${type === "success"
+            ? "#10B981"
+            : type === "error"
+              ? "#EF4444"
+              : "#3B82F6"
+          };
+          `;
+
+        document.body.appendChild(messageDiv);
+
+        setTimeout(() => {
+          messageDiv.remove();
+        }, 5000);
+      };
+
+      // **LOGIN CON GOOGLE** 🔥
+      const handleGoogleLogin = async () => {
+        console.log("🔄 Iniciando Google Login...");
+
+        try {
+          // Verificar servidor primero
+          const serverOk = await validateServer();
+          if (!serverOk) {
+            showMessage(
+              "⚠️ Servidor no disponible. Verifica que esté ejecutándose.",
+              "error"
+            );
+            return;
+          }
+
+          console.log("🔐 Abriendo popup de Google...");
+
+          // Login con Firebase/Google
+          const result = await window.signInWithPopup(
+            window.firebaseAuth,
+            window.googleProvider
+          );
+          const user = result.user;
+
+          console.log("✅ Autenticación Google exitosa:", {
+            name: user.displayName,
+            email: user.email,
+            uid: user.uid,
+            verified: user.emailVerified,
+          });
+
+          showMessage(`🔐 Autenticado como ${user.displayName}`, "success");
+
+          // **ENVIAR AL BACKEND**
+          console.log("📤 Enviando datos al backend...");
+
+          const userData = {
+            nombre_usuario: user.displayName,
+            correo: user.email,
+            firebase_uid: user.uid,
+            email_verified: user.emailVerified,
+          };
+
+          const response = await fetch(`${API_URL}/login/google`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(userData),
+          });
+
+          console.log(
+            "📥 Respuesta backend:",
+            response.status,
+            response.statusText
+          );
+
+          if (response.ok) {
+            const data = await response.json();
+            console.log("✅ Backend confirmado:", data);
+
+            // Guardar usuario
+            localStorage.setItem("usuario", JSON.stringify(data.usuario));
+            localStorage.setItem("loginTime", new Date().toISOString());
+            localStorage.setItem("loginMethod", "google");
+
+            // Guardar nombre_usuario y usuario_id en sessionStorage para compatibilidad con profile.js
+            sessionStorage.setItem("nombre_usuario", data.usuario.nombre_usuario);
+            sessionStorage.setItem("usuario_id", data.usuario.usuario_id);
+
+            showMessage(
+              `🎉 ¡Bienvenido, ${data.usuario.nombre_usuario}!`,
+              "success"
+            );
+
+            // Redirigir
+            setTimeout(() => {
+              console.log("🚀 Redirigiendo...");
+              window.location.href = "../html/indice.html";
+            }, 2000);
+          } else {
+            const errorText = await response.text();
+            console.error("❌ Error backend:", errorText);
+            showMessage("❌ Error del servidor: " + errorText, "error");
+          }
+        } catch (error) {
+          console.error("❌ Error completo Google Login:", error);
+
+          // Errores específicos de Firebase
+          if (error.code === "auth/popup-closed-by-user") {
+            showMessage("⚠️ Ventana cerrada. Intenta de nuevo.", "error");
+          } else if (error.code === "auth/popup-blocked") {
+            showMessage(
+              "⚠️ Popup bloqueado. Permite popups para este sitio.",
+              "error"
+            );
+          } else if (error.code === "auth/cancelled-popup-request") {
+            console.log("ℹ️ Popup cancelado (normal)");
+          } else if (error.message && error.message.includes("network")) {
+            showMessage("❌ Error de red. Verifica tu conexión.", "error");
+          } else if (error.message && error.message.includes("API key")) {
+            showMessage(
+              "❌ Error de configuración Firebase. Verifica que Identity Toolkit API esté habilitada.",
+              "error"
+            );
+          } else {
+            showMessage("❌ Error: " + error.message, "error");
+          }
+        }
+      };
+
+      // **ASIGNAR EVENTOS GOOGLE LOGIN**
+      if (elements.googleLoginBtn) {
+        console.log("Configurando botón Google Login");
+        elements.googleLoginBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          console.log("🖱️ Click Google Login");
+          handleGoogleLogin();
+        });
+      }
+
+      if (elements.googleRegisterBtn) {
+        console.log("Configurando botón Google Register");
+        elements.googleRegisterBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          console.log("🖱️ Click Google Register");
+          handleGoogleLogin();
+        });
+      }
+
+      // **LOGIN TRADICIONAL**
+      if (elements.loginForm) {
+        elements.loginForm.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          console.log("🔑 Login tradicional...");
+
+          const username = elements.loginForm
+            .querySelector('input[type="text"]')
+            .value.trim();
+          const password = elements.loginForm.querySelector(
+            'input[type="password"]'
+          ).value;
+
+          if (!username || !password) {
+            showMessage("⚠️ Ingresa usuario y contraseña", "error");
+            return;
+          }
+
+          try {
+            const serverOk = await validateServer();
+            if (!serverOk) {
+              showMessage("⚠️ Servidor no disponible", "error");
+              return;
+            }
+
+            const submitBtn = elements.loginForm.querySelector(
+              'button[type="submit"]'
+            );
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = "Iniciando sesión...";
+            submitBtn.disabled = true;
+
+            const response = await fetch(`${API_URL}/login`, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                nombre_usuario: username,
+                contraseña: password,
+              }),
+            });
+
+            if (response.ok) {
+              const data = await response.json();
+              console.log("✅ Login tradicional exitoso:", data);
+
+              localStorage.setItem("usuario", JSON.stringify(data.usuario));
+              localStorage.setItem("loginTime", new Date().toISOString());
+              localStorage.setItem("loginMethod", "traditional");
+
+              showMessage(
+                `🎉 ¡Bienvenido, ${data.usuario.nombre_usuario}!`,
+                "success"
+              );
+
+              setTimeout(() => {
+                window.location.href = "../html/indice.html";
+              }, 1500);
+            } else {
+              const error = await response.text();
+              console.error("❌ Error login tradicional:", error);
+
+              if (response.status === 401) {
+                showMessage("❌ Usuario o contraseña incorrectos", "error");
+              } else {
+                showMessage("❌ Error: " + error, "error");
+              }
+            }
+
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+          } catch (error) {
+            console.error("❌ Error conexión login:", error);
+            showMessage("❌ Error de conexión", "error");
+
+            const submitBtn = elements.loginForm.querySelector(
+              'button[type="submit"]'
+            );
+            submitBtn.textContent = "Iniciar Sesión";
+            submitBtn.disabled = false;
+          }
+        });
+      }
+
+      // **REGISTRO TRADICIONAL**
+      if (elements.registerForm) {
+        elements.registerForm.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          console.log("📝 Registro tradicional...");
+
+          const username = elements.registerForm
+            .querySelector('input[type="text"]')
+            .value.trim();
+          const email = elements.registerForm
+            .querySelector('input[type="email"]')
+            .value.trim();
+          const password = elements.registerForm.querySelector(
+            'input[type="password"]'
+          ).value;
+
+          // Validaciones
+          if (!username || !email || !password) {
+            showMessage("⚠️ Completa todos los campos", "error");
+            return;
+          }
+
+          if (username.length < 3) {
+            showMessage("⚠️ Usuario mínimo 3 caracteres", "error");
+            return;
+          }
+
+          if (password.length < 6) {
+            showMessage("⚠️ Contraseña mínimo 6 caracteres", "error");
+            return;
+          }
+
+          if (!email.includes("@")) {
+            showMessage("⚠️ Email inválido", "error");
+            return;
+          }
+
+          try {
+            const serverOk = await validateServer();
+            if (!serverOk) {
+              showMessage("⚠️ Servidor no disponible", "error");
+              return;
+            }
+
+            const submitBtn = elements.registerForm.querySelector(
+              'button[type="submit"]'
+            );
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = "Creando cuenta...";
+            submitBtn.disabled = true;
+
+            const response = await fetch(`${API_URL}/registro`, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                nombre_usuario: username,
+                correo: email,
+                contraseña: password,
+              }),
+            });
+
+            if (response.ok) {
+              console.log("✅ Registro exitoso");
+              showMessage(
+                "🎉 ¡Cuenta creada! Ahora puedes iniciar sesión.",
+                "success"
+              );
+
+              elements.registerForm.reset();
+              setTimeout(() => {
+                showLogin();
+              }, 2000);
+            } else {
+              const error = await response.text();
+              console.error("❌ Error registro:", error);
+              showMessage("❌ Error: " + error, "error");
+            }
+
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+          } catch (error) {
+            console.error("❌ Error conexión registro:", error);
+            showMessage("❌ Error de conexión", "error");
+
+            const submitBtn = elements.registerForm.querySelector(
+              'button[type="submit"]'
+            );
+            submitBtn.textContent = "Crear Cuenta";
+            submitBtn.disabled = false;
+          }
+        });
+      }
+
+      // **ESTADO DE AUTENTICACIÓN**
+      window.onAuthStateChanged(window.firebaseAuth, (user) => {
+        if (user) {
+          console.log("👤 Usuario Google autenticado:", user.displayName);
+        } else {
+          console.log("👤 No hay usuario Google autenticado");
+        }
+      });
+
+      console.log("🎉 Sistema completo configurado correctamente");
+      console.log("📊 Funcionalidades: Backend ✅ | Google Login ✅");
+    });
+  </script>
   <script src="../js/main.js"></script>
   <script src="../js/auth.js"></script>
   <script src="../js/register.js"></script>

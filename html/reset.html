@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- reset.html
+     Página de restablecimiento de contraseña con formulario y panel informativo
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Restablecer Contraseña - AltaTek</title>
+  <link rel="icon" href="/imagenes/icono de pagina.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="../css/forgot.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+<div class="container-forgot">
+  <div class="form-box">
+    <h2 class="title">Restablecer Contraseña</h2>
+    <form id="reset-form">
+      <div class="input-group">
+        <input type="password" id="password" placeholder="Nueva contraseña" required minlength="6" />
+      </div>
+      <div class="input-group">
+        <input type="password" id="confirm-password" placeholder="Confirmar nueva contraseña" required minlength="6" />
+      </div>
+      <button type="submit" class="btn-forgot">Restablecer</button>
+      <p id="message" class="feedback"></p>
+      <a href="login.html" class="back-link">← Volver al Login</a>
+    </form>
+  </div>
+  <div class="forgot-panel">
+    <h1>AltaTek</h1>
+    <p>¿Problemas para ingresar? ¡Te ayudamos a recuperar tu cuenta!</p>
+  </div>
+</div>
+
+<script src="../js/reset.js"></script>
+</body>
+</html>
